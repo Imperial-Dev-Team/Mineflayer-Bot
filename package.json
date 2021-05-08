@@ -1,0 +1,50 @@
+{
+  "name": "pistonbot",
+  "version": "1.0.0",
+  "description": "My own minecraft bot.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run 7b7t",
+    "7b7t": "bash start.sh 7b7t",
+    "fix": "ts-standard --fix",
+    "test": "ts-node index.ts localhost"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexProgrammerDE/PistonBot.git"
+  },
+  "keywords": [
+    "minecraft",
+    "bot"
+  ],
+  "author": "AlexProgrammerDE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexProgrammerDE/PistonBot/issues"
+  },
+  "homepage": "https://github.com/AlexProgrammerDE/PistonBot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "express": "^4.17.1",
+    "express-prettify": "^0.1.1",
+    "helmet": "^4.5.0",
+    "minecraft-data": "^2.84.0",
+    "minecraft-protocol": "^1.25.0",
+    "minecraft-protocol-chat-parser": "^3.0.2",
+    "mineflayer": "^2.41.0",
+    "mineflayer-armor-manager": "^1.4.1",
+    "mineflayer-auto-eat": "^2.0.0",
+    "mineflayer-pathfinder": "^1.6.1",
+    "mineflayer-tps": "^1.0.1",
+    "mineflayer-web-inventory": "^1.4.0",
+    "prismarine-chat": "^1.0.3",
+    "prismarine-entity": "^1.1.0",
+    "prismarine-viewer": "^1.19.3",
+    "request": "^2.88.2",
+    "require-self": "^0.2.3",
+    "ts-node": "^9.1.1",
+    "ts-standard": "^10.0.0",
+    "typescript": "^4.2.4",
+    "urban-dictionary": "^2.2.1"
+  }
+}
