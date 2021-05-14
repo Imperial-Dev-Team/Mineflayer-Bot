@@ -46,7 +46,7 @@ let end = false
 
 const time: number = 10
 
-const bot: PistonBot = mineflayer.createBot({
+const bot: ImpBot = mineflayer.createBot({
   host: config.host,
   username: serverSecrets.username,
   port: config.port,
