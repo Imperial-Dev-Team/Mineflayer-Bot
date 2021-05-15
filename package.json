@@ -1,5 +1,5 @@
 {
-  "name": "pistonbot",
+  "name": "brantabot",
   "version": "1.0.0",
   "description": "My own minecraft bot.",
   "main": "index.js",
@@ -9,21 +9,9 @@
     "fix": "ts-standard --fix",
     "test": "ts-node index.ts localhost"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlexProgrammerDE/PistonBot.git"
-  },
-  "keywords": [
-    "minecraft",
-    "bot"
+
   ],
-  "author": "AlexProgrammerDE",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AlexProgrammerDE/PistonBot/issues"
-  },
-  "homepage": "https://github.com/AlexProgrammerDE/PistonBot#readme",
-  "dependencies": {
+    "dependencies": {
     "discord.js": "^12.5.3",
     "express": "^4.17.1",
     "express-prettify": "^0.1.1",
