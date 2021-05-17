@@ -10,7 +10,6 @@
     "test": "ts-node index.ts localhost"
   },
 
-  ],
     "dependencies": {
     "discord.js": "^12.5.3",
     "express": "^4.17.1",
