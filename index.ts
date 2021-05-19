@@ -520,7 +520,7 @@ bot.once('spawn', () => {
 if (modules.spam) {
   setInterval(() => {
     bot.chat(spam.txt[Math.round(Math.random() * (spam.txt.length - 1))])
-  }, 30000)
+  }, 300000)
 }
 
 if (modules.bchelp) {
