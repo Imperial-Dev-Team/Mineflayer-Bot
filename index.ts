@@ -126,7 +126,7 @@ function text (username: string, message: string, whisper: boolean) {
       .setURL(discordConfig.website)
       .addField(username.replace('@', '(at)'), message.replace('@', '(at)'), true)
       .setTimestamp()
-      .setFooter('PistonBot made by Pistonmaster', 'https://avatars0.githubusercontent.com/u/40795980?s=460&v=4')
+      .setFooter('ImperialBot made by IMPERIALSDevTeam(Branta)')
     if (channel instanceof TextChannel) {
       channel.send(embed)
     }
@@ -150,11 +150,11 @@ function text (username: string, message: string, whisper: boolean) {
   }
 
   if (message.startsWith('_about') && modules.about) {
-    bot.chat(prefix + 'PistonBot coded by Pistonmaster with <3!')
+    bot.chat(prefix + 'IMPERIALBot coded by Branta')
   }
 
   if (message.startsWith('_rules') && modules.rules) {
-    bot.chat(prefix + "No rules, but pls don't spam, hack, dupe, xray, swear or grief.")
+    bot.chat(prefix + "NO JEWING, NO HACKING, NO FUCKING.")
   }
 
   if (message.startsWith('_no')) {
@@ -166,11 +166,11 @@ function text (username: string, message: string, whisper: boolean) {
   }
 
   if (message.startsWith('_help')) {
-    bot.chat('/tell ' + username + ' PistonBot help: _tps, _ping, _coords, _tpa, _tpy, _rules, _report, _bible, _about, _goto, _come, _stop, _rm, _lm, _fm, _wm, _urban, _discord')
+    bot.chat('/tell ' + username + ' ImperialBot help: _tps, _ping, _coords, _tpa, _tpy, _rules, _report, _bible, _about, _goto, _come, _stop, _rm, _lm, _fm, _wm, _urban, _discord')
   }
 
   if (message.startsWith('_discord')) {
-    bot.chat('/tell ' + username + ' https://discord.gg/zBPKyC5')
+    bot.chat('/tell ' + username + ' https://discord.gg/F5nZZ4aCyZ')
   }
 
   if (message.startsWith('_tpa') && modules.tp) {
@@ -281,7 +281,7 @@ function text (username: string, message: string, whisper: boolean) {
   }
 
   // PRIVATE COMMANDS
-  if (username === 'Pistonmaster') {
+  if (username === 'Hobby_125') {
     if (message.startsWith('_say')) {
       bot.chat(message.replace('_say ', ''))
     }
@@ -381,7 +381,7 @@ function text (username: string, message: string, whisper: boolean) {
     }
   }
 
-  if (message.startsWith('_phrases') && username === 'Pistonmaster') {
+  if (message.startsWith('_phrases') && username === 'Hobby_125') {
     playerData = require('./data/playerdata.json')
 
     bot.chat(prefix + 'Calculating amount of all saved phrases.')
@@ -394,7 +394,7 @@ function text (username: string, message: string, whisper: boolean) {
     setTimeout(() => bot.chat(prefix + 'Amount of ALL phrases: ' + amount1), 2000)
   }
 
-  if (message.startsWith('_words') && username === 'Pistonmaster') {
+  if (message.startsWith('_words') && username === 'Hobby_125') {
     playerData = require('./data/playerdata.json')
 
     bot.chat(prefix + 'Calculating amount of all saved words.')
@@ -639,13 +639,13 @@ client.on('message', msg => {
       // Commands that should only be triggered once!
       if (discordConfig.primaryserver === server) {
         if (msg.content.startsWith('_help')) {
-          msg.reply('PistonBot Discord help:  `_help, _discord, _invite, _info <server>, _playercount <server>, _players <server>, _tps <server>, _servers`')
+          msg.reply('IMPERIALBot Discord help:  `_help, _discord, _invite, _info <server>, _playercount <server>, _players <server>, _tps <server>, _servers`')
         } else if (msg.content.startsWith('_discord')) {
-          msg.reply('PistonBot Discord: https://discord.gg/9hNWscq')
+          msg.reply('IMPERIALBot Discord: https://discord.gg/9hNWscq')
         } else if (msg.content.startsWith('_invite')) {
-          msg.reply('Add PistonBot to YOUR discord server: https://bit.ly/33nSkz1')
+          msg.reply('Add IMPERIALBot to YOUR discord server: Disabled for now')
         } else if (msg.content.startsWith('_dservercount')) {
-          msg.reply('PistonBot is on ' + client.guilds.cache.size + ' servers.')
+          msg.reply('IMPERIALBot is on ' + client.guilds.cache.size + ' servers.')
         }
       }
 
@@ -703,7 +703,7 @@ client.on('message', msg => {
               .setThumbnail('attachment://' + server + '.png')
               .addField('Players:', pingResult.players.online.toString() + ' / ' + pingResult.players.max.toString())
               .addField('Motd:', replaceColor(parseJSON(pingResult.description)))
-              .setFooter('PistonBot made by Pistonmaster', 'https://avatars0.githubusercontent.com/u/40795980?s=460&v=4')
+              .setFooter('IMPERIALBot made by IMPERIALSDevTeam')
               .setURL(discordConfig.website)
               .setTimestamp(Date.now())
 
