@@ -133,47 +133,47 @@ function text (username: string, message: string, whisper: boolean) {
   }
 
   // ONLY COMMAND
-  if (message.startsWith('_hi') && modules.hi) {
+  if (message.startsWith('~hi') && modules.hi) {
     bot.chat('Hi ' + username + '! Nice to meet you! <3')
   }
 
-  if (message.startsWith('_coords') && modules.coords) {
+  if (message.startsWith('~coords') && modules.coords) {
     bot.chat(prefix + 'My coords are: ' + Number.parseInt(String(bot.entity.position.x)) + ' ' + Number.parseInt(String(bot.entity.position.y)) + ' ' + Number.parseInt(String(bot.entity.position.z)))
   }
 
-  if (message.startsWith('_tps') && modules.tps) {
+  if (message.startsWith('~tps') && modules.tps) {
     bot.chat(prefix + 'Current tps: ' + bot.getTps())
   }
 
-  if ((message.startsWith('_bible') || message.startsWith('_verse')) && modules.bible) {
+  if ((message.startsWith('~bible') || message.startsWith('~verse')) && modules.bible) {
     bot.chat(prefix + bible.proverbs[Math.round(Math.random() * (bible.proverbs.length - 1))])
   }
 
-  if (message.startsWith('_about') && modules.about) {
+  if (message.startsWith('~about') && modules.about) {
     bot.chat(prefix + 'IMPERIALBot coded by Branta')
   }
 
-  if (message.startsWith('_rules') && modules.rules) {
+  if (message.startsWith('~rules') && modules.rules) {
     bot.chat(prefix + "NO JEWING, NO HACKING, NO FUCKING.")
   }
 
-  if (message.startsWith('_no')) {
+  if (message.startsWith('~no')) {
     bot.chat(prefix + 'NO!')
   }
 
-  if (message.startsWith('_yes')) {
+  if (message.startsWith('~yes')) {
     bot.chat(prefix + 'YES!')
   }
 
-  if (message.startsWith('_help')) {
-    bot.chat('/tell ' + username + ' ImperialBot help: _tps, _ping, _coords, _tpa, _tpy, _rules, _report, _bible, _about, _goto, _come, _stop, _rm, _lm, _fm, _wm, _urban, _discord')
+  if (message.startsWith('~help')) {
+    bot.chat('/tell ' + username + ' ImperialBot help: ~tps, ~ping, ~coords, ~tpa, ~tpy, ~rules, ~report, ~bible, ~about, ~goto, ~come, ~stop, ~rm, ~lm, ~fm, ~wm, ~urban, ~discord')
   }
 
-  if (message.startsWith('_discord')) {
+  if (message.startsWith('~discord')) {
     bot.chat('/tell ' + username + ' https://discord.gg/F5nZZ4aCyZ')
   }
 
-  if (message.startsWith('_tpa') && modules.tp) {
+  if (message.startsWith('~tpa') && modules.tp) {
     if (args.length === 1) {
       if ((bot.entity.position.x >= 1000 || bot.entity.position.x <= -1000) || (bot.entity.position.z >= 1000 || bot.entity.position.z <= -1000)) {
         bot.chat('/tpa ' + args[0])
@@ -181,28 +181,28 @@ function text (username: string, message: string, whisper: boolean) {
         bot.chat(prefix + 'Sorry i am not 1000 blocks away from spawn. :(')
       }
     } else {
-      bot.chat(prefix + 'Sorry you should use: _tpa username')
+      bot.chat(prefix + 'Sorry you should use: ~tpa username')
     }
   }
 
-  if (message.startsWith('_tpy') && modules.tp) {
+  if (message.startsWith('~tpy') && modules.tp) {
     if (args.length === 1) {
       bot.chat('/tpy ' + args[0])
     } else {
-      bot.chat(prefix + 'Sorry you should use: _tpy username')
+      bot.chat(prefix + 'Sorry you should use: ~tpy username')
     }
   }
 
-  if (message.startsWith('_report') && modules.report) {
+  if (message.startsWith('~report') && modules.report) {
     if (args.length >= 2) {
-      bot.chat(prefix + 'Reported ' + args[0] + ' for ' + message.replace('_report ' + args[0], ''))
+      bot.chat(prefix + 'Reported ' + args[0] + ' for ' + message.replace('~report ' + args[0], ''))
     } else {
-      bot.chat(prefix + 'Sorry you should use: _report username reason')
+      bot.chat(prefix + 'Sorry you should use: ~report username reason')
     }
   }
 
   if (modules.navigation && !whisper) {
-    if (message.startsWith('_stop')) {
+    if (message.startsWith('~stop')) {
       if (bot.players[username] === undefined || bot.players[username].entity == null) {
         bot.chat('Sorry only player which i see are allowed to use this command')
       } else {
@@ -213,7 +213,7 @@ function text (username: string, message: string, whisper: boolean) {
       }
     }
 
-    if (message.startsWith('_follow')) {
+    if (message.startsWith('~follow')) {
       if (bot.players[username] === undefined || bot.players[username].entity == null) {
         bot.chat(username + ' it seems like your out of range')
       } else {
@@ -224,7 +224,7 @@ function text (username: string, message: string, whisper: boolean) {
       }
     }
 
-    if (message.startsWith('_goto')) {
+    if (message.startsWith('~goto')) {
       const cmd = message.split(' ')
 
       if (cmd.length === 4) { // goto x y z
@@ -252,7 +252,7 @@ function text (username: string, message: string, whisper: boolean) {
     }
   }
 
-  if (message.startsWith('_ping') && modules.ping) {
+  if (message.startsWith('~ping') && modules.ping) {
     if (args.length === 0) {
       if (bot.players[username]) {
         bot.chat(prefix + username + ' your ping is: ' + bot.players[username].ping)
@@ -282,16 +282,16 @@ function text (username: string, message: string, whisper: boolean) {
 
   // PRIVATE COMMANDS
   if (username === 'Hobby_125') {
-    if (message.startsWith('_say')) {
-      bot.chat(message.replace('_say ', ''))
+    if (message.startsWith('~say')) {
+      bot.chat(message.replace('~say ', ''))
     }
 
-    if (message.startsWith('_killbot')) {
+    if (message.startsWith('~killbot')) {
       bot.chat('/kill')
     }
   }
 
-  if (message.startsWith('_urban ')) {
+  if (message.startsWith('~urban ')) {
     const term = message.slice(7)
     ud.term(term, (error: { message: any }, entries: Array<{ definition: any }>) => {
       if (error) {
@@ -306,28 +306,28 @@ function text (username: string, message: string, whisper: boolean) {
     })
   }
 
-  if (message.startsWith('_wm')) {
+  if (message.startsWith('~wm')) {
     playerJoin = require('./data/playerjoin.json')
 
     if (Object.keys(playerJoin).includes(username)) {
       console.log('Player is in the database. Reading the state.')
       if (playerJoin[username]) {
         playerJoin[username] = false
-        bot.chat(prefix + 'Deactivated welcome message. You can toggle them with: _wm')
+        bot.chat(prefix + 'Deactivated welcome message. You can toggle them with: ~wm')
       } else {
         playerJoin[username] = true
-        bot.chat(prefix + 'Activated welcome message. You can toggle them with: _wm')
+        bot.chat(prefix + 'Activated welcome message. You can toggle them with: ~wm')
       }
     } else {
       console.log('Player is not in the database. Adding the player and setting it to true.')
-      bot.chat(prefix + 'Activated welcome message. You can toggle them with: _wm')
+      bot.chat(prefix + 'Activated welcome message. You can toggle them with: ~wm')
       playerJoin[username] = true
     }
 
     fs.writeFileSync('./data/playerjoin.json', JSON.stringify(playerJoin, null, 4))
   }
 
-  if (message.startsWith('_fm') || message.startsWith('_firstmessage')) {
+  if (message.startsWith('~fm') || message.startsWith('~firstmessage')) {
     if (args.length === 0) {
       if (Object.keys(playerData).includes(username) && playerData[username][0] !== undefined) {
         bot.chat(prefix + username + ' your first message which i recorded was: ' + playerData[username][0])
@@ -341,11 +341,11 @@ function text (username: string, message: string, whisper: boolean) {
         bot.chat(prefix + username + ' sorry i didnt record any messages from ' + args[0] + '.')
       }
     } else if (args.length > 1) {
-      bot.chat(prefix + 'Please use: _fm username or _fm')
+      bot.chat(prefix + 'Please use: ~fm username or ~fm')
     }
   }
 
-  if (message.startsWith('_lm') || message.startsWith('_lastmessage')) {
+  if (message.startsWith('~lm') || message.startsWith('~lastmessage')) {
     if (args.length === 0) {
       if (Object.keys(playerData).includes(username) && playerData[username][0] !== undefined) {
         bot.chat(prefix + username + ' your last message which i recorded was: ' + playerData[username][playerData[username].length - 1])
@@ -359,11 +359,11 @@ function text (username: string, message: string, whisper: boolean) {
         bot.chat(prefix + username + ' sorry i didnt record any messages from ' + args[0] + '.')
       }
     } else if (args.length > 1) {
-      bot.chat(prefix + 'Please use: _lm username or _lm')
+      bot.chat(prefix + 'Please use: ~lm username or ~lm')
     }
   }
 
-  if (message.startsWith('_rm') || message.startsWith('_randommessage')) {
+  if (message.startsWith('~rm') || message.startsWith('~randommessage')) {
     if (args.length === 0) {
       if (Object.keys(playerData).includes(username) && playerData[username][0] !== undefined) {
         bot.chat(prefix + username + ' here is a random message which i recorded from you: ' + playerData[username][Math.round(Math.random() * (playerData[username].length - 1))])
@@ -377,11 +377,11 @@ function text (username: string, message: string, whisper: boolean) {
         bot.chat(prefix + username + ' sorry i didnt record any messages from ' + args[0] + '.')
       }
     } else if (args.length > 1) {
-      bot.chat(prefix + 'Please use: _rm username or _rm')
+      bot.chat(prefix + 'Please use: ~rm username or ~rm')
     }
   }
 
-  if (message.startsWith('_phrases') && username === 'Hobby_125') {
+  if (message.startsWith('~phrases') && username === 'Hobby_125') {
     playerData = require('./data/playerdata.json')
 
     bot.chat(prefix + 'Calculating amount of all saved phrases.')
@@ -394,7 +394,7 @@ function text (username: string, message: string, whisper: boolean) {
     setTimeout(() => bot.chat(prefix + 'Amount of ALL phrases: ' + amount1), 2000)
   }
 
-  if (message.startsWith('_words') && username === 'Hobby_125') {
+  if (message.startsWith('~words') && username === 'Hobby_125') {
     playerData = require('./data/playerdata.json')
 
     bot.chat(prefix + 'Calculating amount of all saved words.')
@@ -411,7 +411,7 @@ function text (username: string, message: string, whisper: boolean) {
     setTimeout(() => bot.chat(prefix + 'Amount of ALL words: ' + amount2), 2000)
   }
 
-  if (!whisper && !message.startsWith('_')) {
+  if (!whisper && !message.startsWith('~')) {
     if (Object.keys(playerData).includes(username)) {
       if (playerData[username].includes(message)) {
         console.log('That message is already in the database. Not adding it.')
@@ -638,18 +638,18 @@ client.on('message', msg => {
     if (msg.channel.id !== config.bridge) {
       // Commands that should only be triggered once!
       if (discordConfig.primaryserver === server) {
-        if (msg.content.startsWith('_help')) {
-          msg.reply('IMPERIALBot Discord help:  `_help, _discord, _invite, _info <server>, _playercount <server>, _players <server>, _tps <server>, _servers`')
-        } else if (msg.content.startsWith('_discord')) {
+        if (msg.content.startsWith('~help')) {
+          msg.reply('IMPERIALBot Discord help:  `~help, ~discord, ~invite, ~info <server>, ~playercount <server>, ~players <server>, ~tps <server>, ~servers`')
+        } else if (msg.content.startsWith('~discord')) {
           msg.reply('IMPERIALBot Discord: https://discord.gg/9hNWscq')
-        } else if (msg.content.startsWith('_invite')) {
+        } else if (msg.content.startsWith('~invite')) {
           msg.reply('Add IMPERIALBot to YOUR discord server: Disabled for now')
-        } else if (msg.content.startsWith('_dservercount')) {
+        } else if (msg.content.startsWith('~dservercount')) {
           msg.reply('IMPERIALBot is on ' + client.guilds.cache.size + ' servers.')
         }
       }
 
-      if (msg.content.startsWith('_playercount ' + server)) {
+      if (msg.content.startsWith('~playercount ' + server)) {
         let playerCount = 0
 
         for (const count in bot.players) {
@@ -659,7 +659,7 @@ client.on('message', msg => {
         }
 
         msg.reply(server + '\'s playercount: `' + playerCount + '`')
-      } else if (msg.content.startsWith('_players ' + server)) {
+      } else if (msg.content.startsWith('~players ' + server)) {
         let reply = 'Players on ' + server + ': \n```'
 
         for (const player in bot.players) {
@@ -669,7 +669,7 @@ client.on('message', msg => {
         reply = reply + '```'
 
         msg.reply(reply)
-      } else if (msg.content.startsWith('_info ' + server)) {
+      } else if (msg.content.startsWith('~info ' + server)) {
         mc.ping({
           host: config.host,
           port: config.port,
@@ -710,14 +710,14 @@ client.on('message', msg => {
             msg.channel.send(embed)
           }
         })
-      } else if (msg.content.startsWith('_tps ' + server)) {
+      } else if (msg.content.startsWith('~tps ' + server)) {
         msg.reply('Current tps: `' + bot.getTps() + '`')
-      } else if (msg.content.startsWith('_servers')) {
+      } else if (msg.content.startsWith('~servers')) {
         msg.channel.send('`' + server + '`')
-      } else if (msg.content.startsWith('_setupbridge ' + server)) {
+      } else if (msg.content.startsWith('~setupbridge ' + server)) {
       }
     } else {
-      if (msg.content.startsWith('_restart')) {
+      if (msg.content.startsWith('~restart')) {
         if (msg.author.id === discordConfig.ownerid) {
           end = true
         }
