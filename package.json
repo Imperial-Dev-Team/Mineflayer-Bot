@@ -1,16 +1,14 @@
 {
-  "name": "brantabot",
+  "name": "IMPERIALBOT",
   "version": "1.0.0",
-  "description": "My own minecraft bot.",
+  "description": "IMPERIAL ADVERTISMENT BOT",
   "main": "index.js",
   "scripts": {
-    "start": "npm run 7b7t",
-    "7b7t": "bash start.sh 7b7t",
     "fix": "ts-standard --fix",
     "test": "ts-node index.ts localhost"
   },
 
-    "dependencies": {
+  "dependencies": {
     "discord.js": "^12.5.3",
     "express": "^4.17.1",
     "express-prettify": "^0.1.1",
